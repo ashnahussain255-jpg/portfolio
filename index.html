@@ -25,6 +25,9 @@
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .card-elegant:hover {
             border-color: #3b82f6;
@@ -51,7 +54,6 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        /* Tooltip for Copy Button */
         .tooltip {
             position: relative;
             display: inline-block;
@@ -104,7 +106,7 @@
                     Engineering <br>Digital Resilience.
                 </h1>
                 <p class="text-lg text-muted max-w-md mb-8 leading-relaxed">
-                    Dedicated to building scalable **Android applications** and robust **IoT infrastructures**. Focused on clean code and system efficiency.
+                    Building scalable **AI-driven applications** and robust **IoT infrastructures**. Specialized in bridging the gap between hardware and intelligent software systems.
                 </p>
                 <div class="flex gap-4">
                     <a href="#projects" class="btn-primary px-8 py-3 rounded-lg text-sm font-bold shadow-lg">View My Work</a>
@@ -127,25 +129,25 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Technologies</h4>
+                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Languages & AI</h4>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Kotlin</span><span class="skill-tag">Jetpack Compose</span><span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express</span><span class="skill-tag">MongoDB</span><span class="skill-tag">C++ / Arduino</span><span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Python (Flask)</span><span class="skill-tag">Kotlin</span><span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Llama 3.1 LLM</span><span class="skill-tag">Groq API</span><span class="skill-tag">C++ / Arduino</span>
                     </div>
                 </div>
                 <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Tools</h4>
+                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Infrastructure & Tools</h4>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Android Studio</span><span class="skill-tag">VS Code</span><span class="skill-tag">Git / GitHub</span>
-                        <span class="skill-tag">Postman</span><span class="skill-tag">Figma</span><span class="skill-tag">Docker</span>
+                        <span class="skill-tag">MongoDB</span><span class="skill-tag">Firebase</span><span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git / GitHub</span><span class="skill-tag">Postman</span><span class="skill-tag">Render/Vercel</span>
                     </div>
                 </div>
                 <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Skills</h4>
+                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Architecture Skills</h4>
                     <ul class="space-y-3">
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> System Architecture</li>
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> IoT Infrastructure</li>
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> API Design (REST)</li>
+                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Neural Code Auditing</li>
+                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> IoT Hardware Clusters</li>
+                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Full-Stack API Design</li>
                     </ul>
                 </div>
             </div>
@@ -158,39 +160,48 @@
                 <h2 class="text-3xl font-bold text-slate-900">Selected Projects</h2>
                 <p class="text-muted mt-2">Technical implementations and software solutions.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                
                 <div class="card-elegant overflow-hidden group" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="9.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold mb-1">Energy EMS</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">IoT & Node.js System</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/Ems-api" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://drive.google.com/file/d/1QpReHYxnK9oWd_Z2KMWVWpgyNH0YTGe0/view" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Watch Demo</a></div>
-                    </div>
-                </div>
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="yup.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold mb-1">Acrylix E-Shop</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Full-Stack Platform</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/acrylic" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/acrylic/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="one.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold mb-1">Knitted Boutique</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">UI/UX Showcase</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/knitted" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/knitted/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
-                   <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-48 overflow-hidden bg-slate-100"><img src="h.PNG" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold mb-1">ecoSynPro</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Full-Stack</p>
+                    <div class="p-6 flex-grow">
+                        <h4 class="text-lg font-bold mb-1">EcoSync Pro</h4>
+                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">AI Neural Auditing Platform</p>
+                        <p class="text-sm text-muted mb-6">Built a futuristic code auditor using Llama 3.1 & Groq API to detect logic flaws and security risks in real-time.</p>
                         <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/eco" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/eco/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
                     </div>
                 </div>
+
+                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden bg-slate-100"><img src="9.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                    <div class="p-6 flex-grow">
+                        <h4 class="text-lg font-bold mb-1">Energy EMS</h4>
+                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">IoT & Node.js System</p>
+                        <p class="text-sm text-muted mb-6">Designed an energy monitoring dashboard integrated with hardware sensors for real-time power analytics.</p>
+                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/Ems-api" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://drive.google.com/file/d/1QpReHYxnK9oWd_Z2KMWVWpgyNH0YTGe0/view" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Watch Demo</a></div>
+                    </div>
+                </div>
+
+                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden bg-slate-100"><img src="yup.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                    <div class="p-6 flex-grow">
+                        <h4 class="text-lg font-bold mb-1">Acrylix E-Shop</h4>
+                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Full-Stack Platform</p>
+                        <p class="text-sm text-muted mb-6">A production-ready E-commerce solution focused on smooth UI transitions and secure payment flows.</p>
+                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/acrylic" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/acrylic/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
+                    </div>
+                </div>
+
+                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden bg-slate-100"><img src="one.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                    <div class="p-6 flex-grow">
+                        <h4 class="text-lg font-bold mb-1">Knitted Boutique</h4>
+                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">UI/UX Showcase</p>
+                        <p class="text-sm text-muted mb-6">A high-end boutique interface showcasing aesthetic product displays and fluid user experience design.</p>
+                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/knitted" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/knitted/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -199,18 +210,18 @@
         <div class="max-w-4xl mx-auto">
             <h3 class="text-2xl font-bold mb-12 text-center">Technical Background</h3>
             <div class="space-y-12">
-                <div class="flex gap-6 md:gap-12" data-aos="fade-right"><div class="text-blue-600 font-bold text-sm min-w-[80px]">2025</div><div><h4 class="font-bold text-lg">IoT Infrastructure Architect (FYP)</h4><p class="text-muted text-sm mt-1">Leading development of energy monitoring hardware clusters using ESP32.</p></div></div>
-                <div class="flex gap-6 md:gap-12" data-aos="fade-right" data-aos-delay="100"><div class="text-slate-400 font-bold text-sm min-w-[80px]">2024</div><div><h4 class="font-bold text-lg">Freelance Developer</h4><p class="text-muted text-sm mt-1">Deployed production-ready apps for various clients.</p></div></div>
+                <div class="flex gap-6 md:gap-12" data-aos="fade-right"><div class="text-blue-600 font-bold text-sm min-w-[80px]">2025</div><div><h4 class="font-bold text-lg">IoT Infrastructure Architect (FYP)</h4><p class="text-muted text-sm mt-1">Leading development of energy monitoring hardware clusters using ESP32 and high-concurrency Node.js backends.</p></div></div>
+                <div class="flex gap-6 md:gap-12" data-aos="fade-right" data-aos-delay="100"><div class="text-slate-400 font-bold text-sm min-w-[80px]">2024</div><div><h4 class="font-bold text-lg">Freelance Developer</h4><p class="text-muted text-sm mt-1">Deployed scalable full-stack applications for diverse clients using Python and JavaScript ecosystems.</p></div></div>
             </div>
         </div>
     </section>
 
     <footer class="py-20 px-6 text-center border-t border-slate-100">
         <h2 class="text-3xl font-bold mb-4">Let's build something robust.</h2>
-        <p class="text-muted mb-8">Available for architecture roles and high-impact projects.</p>
+        <p class="text-muted mb-8">Available for architecture roles and high-impact AI/IoT projects.</p>
         
         <div class="flex flex-col items-center gap-6">
-            <a href="mailto:ashnahussain25@email.com" class="text-xl font-semibold text-blue-600 hover:underline">ashnahussain25@email.com</a>
+            <a href="mailto:ashnahussain25@gmail.com" class="text-xl font-semibold text-blue-600 hover:underline">ashnahussain25@gmail.com</a>
             
             <div class="flex gap-4">
                 <div class="tooltip">
