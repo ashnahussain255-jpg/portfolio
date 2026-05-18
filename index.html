@@ -1,280 +1,391 @@
+# Production-Ready `index.html` for Ashna Hussain Portfolio
+
+Copy the complete file below and save it as `index.html`.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashna Hussain | Software Architect</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashna Hussain | Software Engineer | AI & IoT Systems Developer</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <!-- Google Analytics: Replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #ffffff; 
-            color: #1a1a1a;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #0f172a;
             scroll-behavior: smooth;
         }
-        .bg-soft { background-color: #f8fafc; }
+
+        #tsparticles {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+        }
+
         .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid #e2e8f0;
         }
+
         .card-elegant {
-            background: #ffffff;
+            background: rgba(255,255,255,0.95);
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            transition: all 0.3s ease;
+            border-radius: 1rem;
+            transition: all 0.35s ease;
+            overflow: hidden;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
+
         .card-elegant:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
             border-color: #3b82f6;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            transform: translateY(-4px);
         }
-        .btn-primary {
-            background: #1a1a1a;
-            color: #ffffff;
-            transition: all 0.2s ease;
-        }
-        .btn-primary:hover {
-            background: #3b82f6;
-            transform: translateY(-1px);
-        }
-        .text-muted { color: #64748b; }
+
         .skill-tag {
             background: #f1f5f9;
             color: #475569;
             font-size: 0.7rem;
             font-weight: 700;
             padding: 4px 12px;
-            border-radius: 6px;
+            border-radius: 9999px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 100px;
-            background-color: #333;
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
             color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -50px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 10px;
+            transition: all 0.25s ease;
         }
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.25);
+        }
+
+        .text-muted {
+            color: #64748b;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #0f172a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 <body>
 
-    <nav class="fixed top-0 w-full z-50 glass-nav">
-        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-            <div class="text-xl font-bold tracking-tight">
-                Ashna <span class="text-blue-600 font-medium">Hussain</span>
-            </div>
-            <div class="hidden md:flex gap-8 text-[13px] font-semibold text-slate-600">
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#expertise" class="hover:text-blue-600 transition">Expertise</a>
-                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-                <a href="mailto:ashnahussain25@email.com" class="hover:text-blue-600 transition">Contact</a>
-            </div>
-            <a href="https://drive.google.com/file/d/1685uYHIw-JJsUnLAId9ZXD-Pp_kbiVTk/view?usp=sharing" target="_blank" class="text-xs font-bold border-2 border-slate-900 px-5 py-2 rounded-lg hover:bg-slate-900 hover:text-white transition-all">Resume</a>
-        </div>
-    </nav>
+<div id="tsparticles"></div>
 
-    <section class="min-h-screen flex items-center px-6 pt-20 bg-soft">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-up">
-                <h2 class="text-blue-600 font-bold tracking-widest text-xs uppercase mb-4">Software Architect</h2>
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-slate-900">
-                    Engineering <br>Digital Resilience.
-                </h1>
-                <p class="text-lg text-muted max-w-md mb-8 leading-relaxed">
-                    Building scalable **AI-driven applications** and robust **IoT infrastructures**. Specialized in bridging the gap between hardware and intelligent software systems.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#projects" class="btn-primary px-8 py-3 rounded-lg text-sm font-bold shadow-lg">View My Work</a>
-                    <a href="https://github.com/ashnahussain255-jpg" target="_blank" class="px-8 py-3 rounded-lg text-sm font-bold border border-slate-200 hover:bg-white transition">GitHub Profile</a>
-                </div>
-            </div>
-            <div class="relative" data-aos="fade-left">
-                <div class="rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-                    <img src="1.jpeg" alt="Ashna Hussain" class="w-full h-auto grayscale hover:grayscale-0 transition duration-700">
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Floating AI Assistant Button -->
+<a href="https://chat.openai.com/" target="_blank"
+   class="fixed bottom-6 right-6 z-50 bg-blue-600 text-white px-5 py-3 rounded-full shadow-2xl font-bold text-sm hover:scale-105 transition">
+   🤖 Ask My AI
+</a>
 
-    <section id="expertise" class="py-24 px-6 bg-white border-y border-slate-100">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-16 border-l-4 border-blue-600 pl-6">
-                <h2 class="text-3xl font-bold text-slate-900">Technical Matrix</h2>
-                <p class="text-muted mt-2">Core technologies and professional competencies.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Languages & AI</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Python (Flask)</span><span class="skill-tag">Kotlin</span><span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Llama 3.1 LLM</span><span class="skill-tag">Groq API</span><span class="skill-tag">C++ / Arduino</span>
-                    </div>
-                </div>
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Infrastructure & Tools</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">MongoDB</span><span class="skill-tag">Firebase</span><span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git / GitHub</span><span class="skill-tag">Postman</span><span class="skill-tag">Render/Vercel</span>
-                        <span class="skill-tag">Stripe API</span>
- <span class="skill-tag">Webhooks</span>
-<span class="skill-tag">REST APIs</span>
-                    </div>
-                </div>
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Architecture Skills</h4>
-                    <ul class="space-y-3">
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Neural Code Auditing</li>
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> IoT Hardware Clusters</li>
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Full-Stack API Design</li>
-                    </ul>
-                </div>
-            </div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-40 glass-nav">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-tight">
+            Ashna <span class="text-blue-600">Hussain</span>
         </div>
-    </section>
 
-    <section id="projects" class="py-24 px-6 bg-soft">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-16 border-l-4 border-blue-600 pl-6">
-                <h2 class="text-3xl font-bold text-slate-900">Selected Projects</h2>
-                <p class="text-muted mt-2">Technical implementations and software solutions.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="50">
-    <div class="h-48 overflow-hidden bg-slate-100">
-        <img src="s.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Softy Pearl E-commerce">
+        <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+            <a href="#projects" class="hover:text-blue-600">Projects</a>
+            <a href="#expertise" class="hover:text-blue-600">Expertise</a>
+            <a href="#achievements" class="hover:text-blue-600">Achievements</a>
+            <a href="#experience" class="hover:text-blue-600">Experience</a>
+            <a href="#contact" class="hover:text-blue-600">Contact</a>
+        </div>
+
+        <a href="https://drive.google.com/file/d/1685uYHIw-JJsUnLAId9ZXD-Pp_kbiVTk/view?usp=sharing"
+           target="_blank"
+           onclick="trackEvent('Resume Download')"
+           class="text-xs font-bold border-2 border-slate-900 px-5 py-2 rounded-lg hover:bg-slate-900 hover:text-white transition-all">
+           Resume
+        </a>
     </div>
-    <div class="p-6 flex-grow">
-        <h4 class="text-lg font-bold mb-1">Softy Pearl</h4>
-        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Full-Stack MERN & Stripe Integration</p>
-        <p class="text-sm text-muted mb-6">
-            A premium skincare platform featuring automated Stripe payment workflows, real-time order tracking via webhooks, and a custom secure Admin Dashboard for inventory management.
-        </p>
-        <div class="flex gap-4">
-            <a href="https://github.com/ashnahussain255-jpg/softy" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a>
-            <a href="https://softy3.vercel.app" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a>
-        </div>
-    </div>
-</div>
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="h.PNG" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">EcoSync Pro</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">AI Neural Auditing Platform</p>
-                        <p class="text-sm text-muted mb-6">Built a futuristic code auditor using Llama 3.1 & Groq API to detect logic flaws and security risks in real-time.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/eco" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/eco/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
+</nav>
 
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="9.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">Energy EMS</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">IoT & Node.js System</p>
-                        <p class="text-sm text-muted mb-6">Designed an energy monitoring dashboard integrated with hardware sensors for real-time power analytics.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/Ems-api" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://drive.google.com/file/d/1QpReHYxnK9oWd_Z2KMWVWpgyNH0YTGe0/view" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Watch Demo</a></div>
-                    </div>
-                </div>
-
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="yup.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">Acrylix E-Shop</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Full-Stack Platform</p>
-                        <p class="text-sm text-muted mb-6">A production-ready E-commerce solution focused on smooth UI transitions and secure payment flows.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/acrylic" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/acrylic/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
-
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="one.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">Knitted Boutique</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">UI/UX Showcase</p>
-                        <p class="text-sm text-muted mb-6">A high-end boutique interface showcasing aesthetic product displays and fluid user experience design.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/knitted" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/knitted/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="py-24 px-6 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold mb-12 text-center">Technical Background</h3>
-            <div class="space-y-12">
-                <div class="flex gap-6 md:gap-12" data-aos="fade-right"><div class="text-blue-600 font-bold text-sm min-w-[80px]">2025</div><div><h4 class="font-bold text-lg">IoT Infrastructure Architect (FYP)</h4><p class="text-muted text-sm mt-1">Leading development of energy monitoring hardware clusters using ESP32 and high-concurrency Node.js backends.</p></div></div>
-                <div class="flex gap-6 md:gap-12" data-aos="fade-right" data-aos-delay="100"><div class="text-slate-400 font-bold text-sm min-w-[80px]">2024</div><div><h4 class="font-bold text-lg">Freelance Developer</h4><p class="text-muted text-sm mt-1">Deployed scalable full-stack applications for diverse clients using Python and JavaScript ecosystems.</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-20 px-6 text-center border-t border-slate-100">
-        <h2 class="text-3xl font-bold mb-4">Let's build something robust.</h2>
-        <p class="text-muted mb-8">Available for architecture roles and high-impact AI/IoT projects.</p>
-        
-        <div class="flex flex-col items-center gap-6">
-            <a href="mailto:ashnahussain25@gmail.com" class="text-xl font-semibold text-blue-600 hover:underline">ashnahussain25@gmail.com</a>
-            
-            <div class="flex gap-4">
-                <div class="tooltip">
-                    <button onclick="copyLink()" onmouseout="outFunc()" class="btn-primary px-6 py-2 rounded-lg text-xs font-bold">
-                        <span class="tooltiptext" id="myTooltip">Copy URL</span>
-                        Copy Portfolio Link
-                    </button>
-                </div>
-                <a href="https://www.linkedin.com/in/ashna-hussain-500987369/" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-lg text-xs font-bold flex items-center gap-2">
-                    LinkedIn
+<!-- Hero -->
+<section class="min-h-screen flex items-center px-6 pt-24 bg-slate-50/80">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-up">
+            <h2 class="text-blue-600 font-bold tracking-[0.25em] text-xs uppercase mb-4">Software Engineer</h2>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Architecting <span class="gradient-text">Intelligent Systems</span>
+                <br>for the Future.
+            </h1>
+            <p class="text-lg text-muted max-w-xl mb-8 leading-relaxed">
+                Building scalable AI applications, robust IoT infrastructures, and full-stack platforms that bridge hardware, cloud, and intelligent software systems.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#projects" class="btn-primary px-8 py-3 rounded-lg text-sm font-bold">View My Work</a>
+                <a href="https://github.com/ashnahussain255-jpg" target="_blank"
+                   onclick="trackEvent('GitHub Click')"
+                   class="px-8 py-3 rounded-lg text-sm font-bold border border-slate-300 hover:bg-white">
+                   GitHub Profile
                 </a>
             </div>
         </div>
 
-        <div class="mt-12 flex justify-center gap-8 text-xs font-bold text-slate-400 uppercase tracking-widest">
-            <a href="https://github.com/ashnahussain255-jpg" class="hover:text-slate-900 transition">GitHub</a>
-            <span>•</span>
-            <span class="text-slate-300">System Ver 2026.1</span>
+        <div data-aos="fade-left">
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                <img src="1.jpeg" alt="Ashna Hussain" class="w-full h-auto grayscale hover:grayscale-0 transition duration-700">
+            </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
+<!-- Achievement Counter -->
+<section id="achievements" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
+        <div><h3 class="text-4xl font-extrabold">15+</h3><p class="text-slate-300 mt-2">Projects Built</p></div>
+        <div><h3 class="text-4xl font-extrabold">10+</h3><p class="text-slate-300 mt-2">Core Technologies</p></div>
+        <div><h3 class="text-4xl font-extrabold">3+</h3><p class="text-slate-300 mt-2">Production Systems</p></div>
+        <div><h3 class="text-4xl font-extrabold">100%</h3><p class="text-slate-300 mt-2">Passion Driven</p></div>
+    </div>
+</section>
 
-        function copyLink() {
-            navigator.clipboard.writeText(window.location.href);
-            var tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Copied!";
+<!-- Expertise -->
+<section id="expertise" class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-16 border-l-4 border-blue-600 pl-6">
+            <h2 class="text-3xl font-bold">Technical Matrix</h2>
+            <p class="text-muted mt-2">Core technologies and professional competencies.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up">
+                <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Languages & AI</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Kotlin</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Llama 3.1</span>
+                    <span class="skill-tag">Groq API</span>
+                    <span class="skill-tag">Arduino C++</span>
+                </div>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Infrastructure</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">Stripe</span>
+                    <span class="skill-tag">REST APIs</span>
+                </div>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Architecture Skills</h4>
+                <ul class="space-y-3 text-sm font-semibold text-slate-700">
+                    <li>• AI Code Auditing</li>
+                    <li>• IoT Hardware Clusters</li>
+                    <li>• Full-Stack API Design</li>
+                    <li>• Cloud Deployment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-24 px-6 bg-slate-50/80">
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-16 border-l-4 border-blue-600 pl-6">
+            <h2 class="text-3xl font-bold">Selected Projects</h2>
+            <p class="text-muted mt-2">Technical implementations and software solutions.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project Card Template -->
+            <div class="card-elegant" data-aos="fade-up">
+                <img src="s.png" class="h-48 w-full object-cover" alt="Softy Pearl">
+                <div class="p-6 flex-grow">
+                    <h4 class="text-lg font-bold mb-1">Softy Pearl</h4>
+                    <p class="text-xs font-semibold text-blue-600 uppercase mb-4">Full-Stack MERN & Stripe</p>
+                    <p class="text-sm text-muted mb-6">Premium skincare platform with secure payments, webhooks, and admin dashboard.</p>
+                    <div class="flex gap-4 text-xs font-bold">
+                        <a href="https://github.com/ashnahussain255-jpg/softy" target="_blank" onclick="trackEvent('Softy Code')">Code</a>
+                        <a href="https://softy3.vercel.app" target="_blank" onclick="trackEvent('Softy Live')">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-elegant" data-aos="fade-up" data-aos-delay="100">
+                <img src="h.PNG" class="h-48 w-full object-cover" alt="EcoSync Pro">
+                <div class="p-6 flex-grow">
+                    <h4 class="text-lg font-bold mb-1">EcoSync Pro</h4>
+                    <p class="text-xs font-semibold text-blue-600 uppercase mb-4">AI Neural Auditing Platform</p>
+                    <p class="text-sm text-muted mb-6">Real-time code auditing using Llama 3.1 and Groq API.</p>
+                    <div class="flex gap-4 text-xs font-bold">
+                        <a href="https://github.com/ashnahussain255-jpg/eco" target="_blank">Code</a>
+                        <a href="https://ashnahussain255-jpg.github.io/eco/" target="_blank">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-elegant" data-aos="fade-up" data-aos-delay="200">
+                <img src="9.jpeg" class="h-48 w-full object-cover" alt="Energy EMS">
+                <div class="p-6 flex-grow">
+                    <h4 class="text-lg font-bold mb-1">Energy EMS</h4>
+                    <p class="text-xs font-semibold text-blue-600 uppercase mb-4">IoT & Node.js System</p>
+                    <p class="text-sm text-muted mb-6">Real-time energy monitoring platform using ESP32, Firebase, and analytics dashboards.</p>
+                    <div class="flex gap-4 text-xs font-bold">
+                        <a href="https://github.com/ashnahussain255-jpg/Ems-api" target="_blank">Code</a>
+                        <a href="https://drive.google.com/file/d/1QpReHYxnK9oWd_Z2KMWVWpgyNH0YTGe0/view" target="_blank">Watch Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-elegant" data-aos="fade-up" data-aos-delay="300">
+                <img src="yup.png" class="h-48 w-full object-cover" alt="Acrylix E-Shop">
+                <div class="p-6 flex-grow">
+                    <h4 class="text-lg font-bold mb-1">Acrylix E-Shop</h4>
+                    <p class="text-xs font-semibold text-blue-600 uppercase mb-4">Full-Stack E-Commerce</p>
+                    <p class="text-sm text-muted mb-6">Production-ready e-commerce platform with responsive UI and secure payment flows.</p>
+                    <div class="flex gap-4 text-xs font-bold">
+                        <a href="https://github.com/ashnahussain255-jpg/acrylic" target="_blank">Code</a>
+                        <a href="https://ashnahussain255-jpg.github.io/acrylic/" target="_blank">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-12">Technical Background</h3>
+        <div class="space-y-12">
+            <div data-aos="fade-right">
+                <div class="text-blue-600 font-bold text-sm mb-2">2025</div>
+                <h4 class="font-bold text-lg">IoT Infrastructure Architect (FYP)</h4>
+                <p class="text-muted mt-2">Leading development of energy monitoring systems using ESP32, Firebase, and Node.js backends.</p>
+            </div>
+
+            <div data-aos="fade-right" data-aos-delay="100">
+                <div class="text-slate-400 font-bold text-sm mb-2">2024</div>
+                <h4 class="font-bold text-lg">Freelance Developer</h4>
+                <p class="text-muted mt-2">Delivered scalable full-stack applications using Python and JavaScript ecosystems.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 px-6 bg-slate-50">
+    <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-4">Let's Build Something Robust.</h2>
+        <p class="text-muted mb-10">Available for software engineering, AI, IoT, and full-stack development roles.</p>
+
+        <a href="mailto:ashnahussain25@gmail.com"
+           onclick="trackEvent('Email Click')"
+           class="text-2xl font-semibold text-blue-600 hover:underline block mb-8">
+           ashnahussain25@gmail.com
+        </a>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://github.com/ashnahussain255-jpg" target="_blank" class="btn-primary px-6 py-3 rounded-lg text-sm font-bold">GitHub</a>
+            <a href="https://www.linkedin.com/in/ashna-hussain-500987369/" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-sm font-bold">LinkedIn</a>
+        </div>
+
+        <!-- Visitor Counter -->
+        <div class="mt-12 text-sm text-slate-500">
+            Portfolio visits are monitored using Google Analytics.
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-10 text-center border-t border-slate-200 bg-white text-sm text-slate-500">
+    © 2026 Ashna Hussain • System Version 2026.1
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+
+    // Event Tracking
+    function trackEvent(eventName) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, {
+                event_category: 'Portfolio',
+                event_label: window.location.href
+            });
         }
+        console.log('Tracked:', eventName);
+    }
 
-        function outFunc() {
-            var tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Copy URL";
+    // Particle Background
+    tsParticles.load('tsparticles', {
+        fullScreen: false,
+        background: { color: 'transparent' },
+        particles: {
+            number: { value: 50 },
+            color: { value: '#3b82f6' },
+            links: {
+                enable: true,
+                distance: 150,
+                opacity: 0.15,
+                color: '#3b82f6'
+            },
+            move: {
+                enable: true,
+                speed: 1
+            },
+            size: {
+                value: { min: 1, max: 3 }
+            },
+            opacity: {
+                value: 0.3
+            }
+        },
+        interactivity: {
+            events: {
+                onHover: {
+                    enable: true,
+                    mode: 'grab'
+                }
+            }
         }
-    </script>
+    }); 
+</script>
+
 </body>
 </html>
+
