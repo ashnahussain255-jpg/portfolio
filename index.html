@@ -1,148 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ashna Hussain | Software Engineer | AI & IoT Systems Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashna Hussain | Software Architect</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Google Analytics (replace ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <style>
-        body{font-family:Inter,sans-serif;background:#fff;color:#0f172a;scroll-behavior:smooth}
-        #tsparticles{position:fixed;inset:0;z-index:-1}
-        .glass{background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0}
-        .card{border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;transition:.3s}
-        .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
-        .btn{background:linear-gradient(135deg,#0f172a,#2563eb);color:#fff;padding:10px 18px;border-radius:10px;font-weight:700}
-        .tag{background:#f1f5f9;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700}
-    </style>
-</head>
-<body>
-
-<div id="tsparticles"></div>
-
-<a href="https://chat.openai.com" target="_blank" class="fixed bottom-5 right-5 bg-blue-600 text-white px-5 py-3 rounded-full font-bold shadow-xl z-50">
-🤖 AI Assistant
-</a>
-
-<nav class="fixed top-0 w-full glass z-40">
-  <div class="max-w-6xl mx-auto flex justify-between px-6 py-4">
-    <div class="font-bold">Ashna <span class="text-blue-600">Hussain</span></div>
-    <div class="hidden md:flex gap-6 text-sm">
-      <a href="#projects">Projects</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a onclick="track('resume_click')" href="#" class="btn">Resume</a>
-  </div>
-</nav>
-
-<section class="min-h-screen flex items-center px-6 pt-24">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
-    <div>
-      <h1 class="text-5xl font-extrabold">Architecting Intelligent Systems</h1>
-      <p class="mt-4 text-slate-500">AI + IoT + Full Stack Developer Portfolio</p>
-      <div class="mt-6 flex gap-3">
-        <a href="#projects" class="btn">View Work</a>
-        <a href="https://github.com" class="border px-4 py-2 rounded-lg">GitHub</a>
-      </div>
-    </div>
-    <img src="1.jpeg" class="rounded-2xl shadow-xl">
-  </div>
-</section>
-
-<section id="expertise" class="py-20 px-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6">Expertise</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card p-6">
-        <h3 class="font-bold text-blue-600">AI & Backend</h3>
-        <div class="flex flex-wrap gap-2 mt-3">
-          <span class="tag">Python</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">LLM</span>
-        </div>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-bold text-blue-600">IoT</h3>
-        <div class="flex flex-wrap gap-2 mt-3">
-          <span class="tag">ESP32</span>
-          <span class="tag">Arduino</span>
-        </div>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-bold text-blue-600">Cloud</h3>
-        <div class="flex flex-wrap gap-2 mt-3">
-          <span class="tag">Firebase</span>
-          <span class="tag">MongoDB</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="py-20 px-6 bg-slate-50">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6">Projects</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <div class="card">
-        <img src="s.png" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="font-bold">Softy Pearl</h3>
-          <a onclick="track('softy_click')" href="#" class="text-blue-600">View</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="h.PNG" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="font-bold">EcoSync Pro</h3>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="py-20 px-6 text-center">
-  <h2 class="text-3xl font-bold">Contact</h2>
-  <p class="mt-2 text-slate-500">Get in touch for projects</p>
-  <a href="mailto:ashnahussain25@gmail.com" class="text-blue-600 text-xl block mt-4">Email Me</a>
-</section>
-
-<footer class="py-10 text-center text-sm text-slate-500">
-  © 2026 Ashna Hussain
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init({duration:800,once:true});
-
-function track(name){
-  if(window.gtag){
-    gtag('event', name);
-  }
-  console.log('event:',name);
+<style>
+body{
+    font-family:'Inter',sans-serif;
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    color:#0f172a;
+    scroll-behavior:smooth;
 }
 
-tsParticles.load("tsparticles",{
-  particles:{number:{value:40},move:{enable:true,speed:1},links:{enable:true}}
-});
-</script>
+.glass{
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(14px);
+    border-bottom:1px solid #e2e8f0;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color:#3b82f6;
+}
+
+.btn{
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+}
+
+.tag{
+    font-size:11px;
+    font-weight:600;
+    padding:4px 10px;
+    border-radius:999px;
+    background:#f1f5f9;
+    color:#334155;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="glass fixed top-0 w-full z-50">
+<div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+
+<div class="text-xl font-bold tracking-tight">
+Ashna <span class="text-blue-600">Hussain</span>
+</div>
+
+<div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+<a href="#projects" class="hover:text-blue-600">Projects</a>
+<a href="#expertise" class="hover:text-blue-600">Skills</a>
+<a href="#experience" class="hover:text-blue-600">Experience</a>
+</div>
+
+<a href="#" class="px-4 py-2 text-xs font-semibold border rounded-lg hover:bg-slate-900 hover:text-white btn">
+Resume
+</a>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center px-6 pt-24">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+<div>
+<p class="text-blue-600 text-xs font-bold tracking-widest uppercase">
+Software Architect
+</p>
+
+<h1 class="text-5xl md:text-7xl font-bold leading-tight mt-4">
+Engineering <br>Digital Systems.
+</h1>
+
+<p class="text-slate-500 mt-6 max-w-md">
+Building scalable AI-driven applications and IoT ecosystems with modern engineering practices.
+</p>
+
+<div class="flex gap-4 mt-8">
+<a class="bg-slate-900 text-white px-6 py-3 rounded-lg text-sm font-semibold btn hover:bg-blue-600">
+View Work
+</a>
+<a class="border px-6 py-3 rounded-lg text-sm font-semibold btn hover:bg-slate-100">
+GitHub
+</a>
+</div>
+
+</div>
+
+<div class="card overflow-hidden">
+<img src="1.jpeg" class="w-full grayscale hover:grayscale-0 transition duration-500">
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="expertise" class="py-24 px-6">
+<div class="max-w-6xl mx-auto">
+
+<h2 class="text-3xl font-bold mb-10">Technical Expertise</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="card p-6">
+<h3 class="text-blue-600 font-bold text-sm mb-4">AI & Development</h3>
+<div class="flex flex-wrap gap-2">
+<span class="tag">Python</span>
+<span class="tag">Kotlin</span>
+<span class="tag">Node.js</span>
+<span class="tag">LLMs</span>
+</div>
+</div>
+
+<div class="card p-6">
+<h3 class="text-blue-600 font-bold text-sm mb-4">Backend & Cloud</h3>
+<div class="flex flex-wrap gap-2">
+<span class="tag">Firebase</span>
+<span class="tag">MongoDB</span>
+<span class="tag">Docker</span>
+<span class="tag">REST APIs</span>
+</div>
+</div>
+
+<div class="card p-6">
+<h3 class="text-blue-600 font-bold text-sm mb-4">IoT Systems</h3>
+<div class="flex flex-wrap gap-2">
+<span class="tag">ESP32</span>
+<span class="tag">Arduino</span>
+<span class="tag">Sensors</span>
+<span class="tag">Edge Computing</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 px-6 bg-slate-50">
+<div class="max-w-6xl mx-auto">
+
+<h2 class="text-3xl font-bold mb-10">Selected Projects</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="card overflow-hidden">
+<img src="s.png" class="h-48 w-full object-cover">
+<div class="p-6">
+<h3 class="font-bold text-lg">Softy Pearl</h3>
+<p class="text-sm text-slate-500 mt-2">Full-stack e-commerce platform with Stripe integration.</p>
+</div>
+</div>
+
+<div class="card overflow-hidden">
+<img src="h.PNG" class="h-48 w-full object-cover">
+<div class="p-6">
+<h3 class="font-bold text-lg">EcoSync Pro</h3>
+<p class="text-sm text-slate-500 mt-2">AI-based code auditing system using LLMs.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-16 text-center">
+<h2 class="text-2xl font-bold">Let’s build something impactful.</h2>
+<p class="text-slate-500 mt-2">AI • IoT • Full-Stack Systems</p>
+</footer>
 
 </body>
 </html>
-
