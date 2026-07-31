@@ -1,383 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashna Hussain | Software Architect</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #ffffff; 
-            color: #1a1a1a;
-            scroll-behavior: smooth;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashna Hussain | Software Architect</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper:   '#EEF1F6',
+          paper2:  '#E4E9F1',
+          ink:     '#101A2B',
+          inksoft: '#48536A',
+          line:    '#C7D1DE',
+          surface: '#FFFFFF',
+          copper:  '#AE5B24',
+          copperd: '#8A4419',
+          copperl: '#E7C9A9',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"','sans-serif'],
+          body: ['"IBM Plex Sans"','sans-serif'],
+          mono: ['"JetBrains Mono"','monospace'],
         }
-        .bg-soft { background-color: #f8fafc; }
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .card-elegant {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .card-elegant:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            transform: translateY(-4px);
-        }
-        .btn-primary {
-            background: #1a1a1a;
-            color: #ffffff;
-            transition: all 0.2s ease;
-        }
-        .btn-primary:hover {
-            background: #3b82f6;
-            transform: translateY(-1px);
-        }
-        .text-muted { color: #64748b; }
-        .skill-tag {
-            background: #f1f5f9;
-            color: #475569;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 100px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -50px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 10px;
-        }
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-    </style>
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #EEF1F6;
+    color: #101A2B;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(16,26,43,0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16,26,43,0.055) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  .paper-nav {
+    background: rgba(238,241,246,0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #C7D1DE;
+  }
+  /* corner bracket frame */
+  .bracket { position: relative; }
+  .bracket::before, .bracket::after,
+  .bracket .bl, .bracket .br {
+    content: "";
+    position: absolute;
+    width: 18px; height: 18px;
+    border-color: #AE5B24;
+    z-index: 10;
+    pointer-events: none;
+    transition: width .25s ease, height .25s ease;
+  }
+  .bracket::before { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; }
+  .bracket::after   { top: -1px; right: -1px; border-top: 2px solid; border-right: 2px solid; }
+  .bracket .bl { bottom: -1px; left: -1px; border-bottom: 2px solid; border-left: 2px solid; }
+  .bracket .br { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; }
+  .bracket:hover::before, .bracket:hover::after,
+  .bracket:hover .bl, .bracket:hover .br { width: 26px; height: 26px; }
+
+  .card-blueprint {
+    background: #FFFFFF;
+    border: 1px solid #C7D1DE;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+  .card-blueprint:hover {
+    border-color: #AE5B24;
+    transform: translateY(-3px);
+    box-shadow: 0 18px 34px -18px rgba(16,26,43,0.35);
+  }
+
+  .tag-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #48536A;
+    background: #EEF1F6;
+    border: 1px solid #C7D1DE;
+    padding: 4px 9px;
+  }
+
+  .btn-copper {
+    background: #AE5B24;
+    color: #fff;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .btn-copper:hover { background: #8A4419; transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1.5px solid #101A2B;
+    color: #101A2B;
+    transition: all .2s ease;
+  }
+  .btn-outline:hover { background: #101A2B; color: #EEF1F6; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.14em;
+    font-size: 11px;
+    font-weight: 600;
+    color: #AE5B24;
+  }
+
+  .sheet-index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #48536A;
+    letter-spacing: 0.08em;
+  }
+
+  /* ticker */
+  .ticker-track { display: flex; width: max-content; animation: ticker 26s linear infinite; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+
+  /* timeline */
+  .timeline-rail { border-left: 1.5px dashed #C7D1DE; }
+  .timeline-tick {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #AE5B24;
+    border: 1.5px solid #AE5B24;
+    background: #EEF1F6;
+  }
+
+  ::selection { background: #AE5B24; color: #fff; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #AE5B24;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
 </head>
-<body>
+<body class="font-body">
 
-    <nav class="fixed top-0 w-full z-50 glass-nav">
-        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-            <div class="text-xl font-bold tracking-tight">
-                Ashna <span class="text-blue-600 font-medium">Hussain</span>
-            </div>
-            <div class="hidden md:flex gap-8 text-[13px] font-semibold text-slate-600">
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#certifications" class="hover:text-blue-600 transition">Certifications</a>
-                <a href="#expertise" class="hover:text-blue-600 transition">Expertise</a>
-                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-                <a href="mailto:ashnahussain25@email.com" class="hover:text-blue-600 transition">Contact</a>
-            </div>
-            <a href="https://drive.google.com/file/d/19P1AXeFubkOkNx-XK_v8ZS1LVfh6lGbY/view?usp=sharing" target="_blank" class="text-xs font-bold border-2 border-slate-900 px-5 py-2 rounded-lg hover:bg-slate-900 hover:text-white transition-all">Resume</a>
-        </div>
-    </nav>
-
-    <section class="min-h-screen flex items-center px-6 pt-20 bg-soft">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-up">
-                <h2 class="text-blue-600 font-bold tracking-widest text-xs uppercase mb-4">Software Architect</h2>
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-slate-900">
-                    Engineering <br>Digital Resilience.
-                </h1>
-                <p class="text-lg text-muted max-w-md mb-8 leading-relaxed">
-                    Building scalable **AI-driven applications** and robust **IoT infrastructures**. Specialized in bridging the gap between hardware and intelligent software systems.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#projects" class="btn-primary px-8 py-3 rounded-lg text-sm font-bold shadow-lg">View My Work</a>
-                    <a href="https://github.com/ashnahussain255-jpg" target="_blank" class="px-8 py-3 rounded-lg text-sm font-bold border border-slate-200 hover:bg-white transition">GitHub Profile</a>
-                </div>
-            </div>
-            <div class="relative" data-aos="fade-left">
-                <div class="rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-                    <img src="1.jpeg" alt="Ashna Hussain" class="w-full h-auto grayscale hover:grayscale-0 transition duration-700">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expertise" class="py-24 px-6 bg-white border-y border-slate-100">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-16 border-l-4 border-blue-600 pl-6">
-                <h2 class="text-3xl font-bold text-slate-900">Technical Matrix</h2>
-                <p class="text-muted mt-2">Core technologies and professional competencies.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Languages & AI</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Python (Flask)</span><span class="skill-tag">Kotlin</span><span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Llama 3.1 LLM</span><span class="skill-tag">Groq API</span><span class="skill-tag">C++ / Arduino</span>
-                    </div>
-                </div>
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Infrastructure & Tools</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">MongoDB</span><span class="skill-tag">Firebase</span><span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git / GitHub</span><span class="skill-tag">Postman</span><span class="skill-tag">Render/Vercel</span>
-                        <span class="skill-tag">Stripe API</span>
- <span class="skill-tag">Webhooks</span>
-<span class="skill-tag">REST APIs</span>
-                    </div>
-                </div>
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-blue-600 text-xs font-black uppercase tracking-widest mb-4">Architecture Skills</h4>
-                    <ul class="space-y-3">
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Neural Code Auditing</li>
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> IoT Hardware Clusters</li>
-                        <li class="text-sm font-semibold text-slate-700 flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Full-Stack API Design</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-24 px-6 bg-soft">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-16 border-l-4 border-blue-600 pl-6">
-                <h2 class="text-3xl font-bold text-slate-900">Selected Projects</h2>
-                <p class="text-muted mt-2">Technical implementations and software solutions.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="50">
-    <div class="h-48 overflow-hidden bg-slate-100">
-        <img src="s.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Softy Pearl E-commerce">
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full z-50 paper-nav">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="font-display text-lg font-bold tracking-tight text-ink">
+        <span class="text-copper">[</span>AH<span class="text-copper">]</span>
+        <span class="hidden sm:inline text-inksoft font-normal text-sm ml-2 font-mono">/ software architect</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-[11px] font-mono font-semibold uppercase tracking-wider text-inksoft">
+        <a href="#projects" class="hover:text-copper transition">Projects</a>
+        <span class="text-line">/</span>
+        <a href="#certifications" class="hover:text-copper transition">Certifications</a>
+        <span class="text-line">/</span>
+        <a href="#expertise" class="hover:text-copper transition">Expertise</a>
+        <span class="text-line">/</span>
+        <a href="#experience" class="hover:text-copper transition">Experience</a>
+        <span class="text-line">/</span>
+        <a href="mailto:ashnahussain25@email.com" class="hover:text-copper transition">Contact</a>
+      </div>
+      <a href="https://drive.google.com/file/d/19P1AXeFubkOkNx-XK_v8ZS1LVfh6lGbY/view?usp=sharing" target="_blank"
+         class="btn-outline text-[11px] font-mono font-bold uppercase px-5 py-2 tracking-wide">Resume</a>
     </div>
-    <div class="p-6 flex-grow">
-        <h4 class="text-lg font-bold mb-1">Softy Pearl</h4>
-        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Full-Stack MERN & Stripe Integration</p>
-        <p class="text-sm text-muted mb-6">
-            A premium skincare platform featuring automated Stripe payment workflows, real-time order tracking via webhooks, and a custom secure Admin Dashboard for inventory management.
-        </p>
-        <div class="flex gap-4">
-            <a href="https://github.com/ashnahussain255-jpg/softy" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a>
-            <a href="https://softy3.vercel.app" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center px-6 pt-24 pb-10 grid-bg">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+        <div data-aos="fade-up">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="w-2 h-2 bg-copper"></span>
+            <h2 class="eyebrow">SHEET 01 — SOFTWARE ARCHITECT</h2>
+          </div>
+          <h1 class="font-display text-5xl md:text-7xl font-bold tracking-tight mb-6 text-ink leading-[1.05]">
+            Engineering<br>Digital&nbsp;Resilience.
+          </h1>
+          <p class="text-base text-inksoft max-w-md mb-9 leading-relaxed">
+            Building scalable AI-driven applications and robust IoT infrastructures — specialized in bridging the gap between hardware and intelligent software systems.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="btn-copper px-8 py-3 text-sm font-bold font-mono uppercase tracking-wide">View My Work</a>
+            <a href="https://github.com/ashnahussain255-jpg" target="_blank" class="btn-outline px-8 py-3 text-sm font-bold font-mono uppercase tracking-wide">GitHub Profile</a>
+          </div>
         </div>
-    </div>
-</div>
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="h.PNG" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">EcoSync Pro</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">AI Neural Auditing Platform</p>
-                        <p class="text-sm text-muted mb-6">Built a futuristic code auditor using Llama 3.1 & Groq API to detect logic flaws and security risks in real-time.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/eco" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/eco/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
 
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="9.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">Energy EMS</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">IoT & Node.js System</p>
-                        <p class="text-sm text-muted mb-6">Designed an energy monitoring dashboard integrated with hardware sensors for real-time power analytics.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/Ems-api" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://drive.google.com/file/d/1QpReHYxnK9oWd_Z2KMWVWpgyNH0YTGe0/view" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Watch Demo</a></div>
-                    </div>
-                </div>
-
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="yup.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">Acrylix E-Shop</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Full-Stack Platform</p>
-                        <p class="text-sm text-muted mb-6">A production-ready E-commerce solution focused on smooth UI transitions and secure payment flows.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/acrylic" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/acrylic/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
-                   <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="yup.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">Acrylix E-Shop</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Full-Stack Platform</p>
-                        <p class="text-sm text-muted mb-6">A production-ready E-commerce solution focused on smooth UI transitions and secure payment flows.</p>
-                        <div class="flex gap-4"><a href="https://claude.ai/public/artifacts/c3afb39a-e80a-4cbf-92e6-fb1c3bd04382" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/acrylic/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
-
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="one.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">Knitted Boutique</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">UI/UX Showcase</p>
-                        <p class="text-sm text-muted mb-6">A high-end boutique interface showcasing aesthetic product displays and fluid user experience design.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/knitted" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/knitted/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
-           <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="h-48 overflow-hidden bg-slate-100"><img src="asset-02.gif" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Citypunks landing page"></div>
-                    <div class="p-6 flex-grow">
-                        <h4 class="text-lg font-bold mb-1">Citypunks</h4>
-                        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">Game Landing Page — UI/UX Wireframe</p>
-                        <p class="text-sm text-muted mb-6">A neon-themed marketing site for a sandbox city game, built with animated sector navigation, live "dispatches" news feed, and character showcase sections.</p>
-                        <div class="flex gap-4"><a href="https://github.com/ashnahussain255-jpg/chunky" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Code Link</a><a href="https://ashnahussain255-jpg.github.io/chunky/" class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">Live Preview</a></div>
-                    </div>
-                </div>
-                <div class="card-elegant overflow-hidden group" data-aos="fade-up" data-aos-delay="350">
-    <div class="h-48 overflow-hidden bg-slate-100">
-        <img src="salon.png" 
-             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-             alt="Salon Website">
-    </div>
-
-    <div class="p-6 flex-grow">
-        <h4 class="text-lg font-bold mb-1">Luxury Salon Website</h4>
-
-        <p class="text-xs font-medium text-blue-600 mb-4 uppercase">
-            Frontend Development & UI/UX Design
-        </p>
-
-        <p class="text-sm text-muted mb-6">
-            A modern salon landing website designed with an elegant user interface,
-            responsive layouts, smooth animations, and a premium beauty brand experience.
-            Built using HTML, CSS, JavaScript and modern frontend practices.
-        </p>
-
-        <div class="flex gap-4">
-            <a href="https://claude.ai/public/artifacts/c3afb39a-e80a-4cbf-92e6-fb1c3bd04382" 
-               class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">
-                Code Link
-            </a>
-
-            <a href="https://claude.ai/public/artifacts/c3afb39a-e80a-4cbf-92e6-fb1c3bd04382" 
-               class="text-xs font-bold text-slate-900 hover:text-blue-600 transition">
-                Live Preview
-            </a>
-        </div>
-    </div>
-</div>
+        <div class="relative" data-aos="fade-left">
+          <div class="bracket p-3">
+            <span class="bl"></span><span class="br"></span>
+            <div class="overflow-hidden">
+              <img src="1.jpeg" alt="Ashna Hussain" class="w-full h-auto grayscale hover:grayscale-0 transition duration-700">
             </div>
+          </div>
+          <p class="sheet-index mt-3 text-right">FIG.01 — PORTRAIT / REV.2026.2</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="experience" class="py-24 px-6 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold mb-12 text-center">Technical Background</h3>
-            <div class="space-y-12">
-                <div class="flex gap-6 md:gap-12" data-aos="fade-right"><div class="text-blue-600 font-bold text-sm min-w-[80px]">2025</div><div><h4 class="font-bold text-lg">IoT Infrastructure Architect (FYP)</h4><p class="text-muted text-sm mt-1">Leading development of energy monitoring hardware clusters using ESP32 and high-concurrency Node.js backends.</p></div></div>
-                <div class="flex gap-6 md:gap-12" data-aos="fade-right" data-aos-delay="100"><div class="text-slate-400 font-bold text-sm min-w-[80px]">2024</div><div><h4 class="font-bold text-lg">Freelance Developer</h4><p class="text-muted text-sm mt-1">Deployed scalable full-stack applications for diverse clients using Python and JavaScript ecosystems.</p></div></div>
-            </div>
-        </div>
-    </section>
-<section id="certifications" class="py-24 px-6 bg-soft">
+  <!-- STACK TICKER -->
+  <div class="ticker-wrap border-y border-line bg-ink overflow-hidden">
+    <div class="ticker-track py-3">
+      <div class="flex items-center gap-8 pr-8 font-mono text-[11px] font-semibold uppercase tracking-widest text-paper/80 whitespace-nowrap">
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-copper rounded-full"></span>STACK ONLINE</span>
+        <span>·</span><span>Python (Flask)</span><span>·</span><span>Kotlin</span><span>·</span><span>Node.js</span>
+        <span>·</span><span>Llama 3.1 LLM</span><span>·</span><span>Groq API</span><span>·</span><span>C++ / Arduino</span>
+        <span>·</span><span>MongoDB</span><span>·</span><span>Firebase</span><span>·</span><span>Docker</span>
+        <span>·</span><span>Stripe API</span><span>·</span><span>REST / Webhooks</span>
+      </div>
+      <div class="flex items-center gap-8 pr-8 font-mono text-[11px] font-semibold uppercase tracking-widest text-paper/80 whitespace-nowrap" aria-hidden="true">
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-copper rounded-full"></span>STACK ONLINE</span>
+        <span>·</span><span>Python (Flask)</span><span>·</span><span>Kotlin</span><span>·</span><span>Node.js</span>
+        <span>·</span><span>Llama 3.1 LLM</span><span>·</span><span>Groq API</span><span>·</span><span>C++ / Arduino</span>
+        <span>·</span><span>MongoDB</span><span>·</span><span>Firebase</span><span>·</span><span>Docker</span>
+        <span>·</span><span>Stripe API</span><span>·</span><span>REST / Webhooks</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERTISE -->
+  <section id="expertise" class="py-24 px-6 bg-surface border-b border-line">
     <div class="max-w-6xl mx-auto">
-
-        <div class="mb-16 border-l-4 border-blue-600 pl-6">
-            <h2 class="text-3xl font-bold text-slate-900">Certifications</h2>
-            <p class="text-muted mt-2">Professional learning and technical achievements.</p>
+      <div class="flex items-end justify-between border-l-4 border-copper pl-6 mb-16 flex-wrap gap-2">
+        <div>
+          <p class="sheet-index mb-1">SHEET 02</p>
+          <h2 class="font-display text-3xl font-bold text-ink">Technical Matrix</h2>
+          <p class="text-inksoft mt-2">Core technologies and professional competencies.</p>
         </div>
+      </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-
-            <!-- Certificate 1 -->
-            <div class="card-elegant overflow-hidden group" data-aos="fade-up">
-
-                <div class="h-48 overflow-hidden bg-slate-100">
-                    <img src="ss.png" 
-                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                    alt="Google Project Management Certificate">
-                </div>
-
-                <div class="p-6">
-                    <h4 class="text-lg font-bold mb-2">
-                        Google Project Management Certificate
-                    </h4>
-
-                    <p class="text-xs font-medium text-blue-600 uppercase mb-4">
-                        Google | Coursera
-                    </p>
-
-                    <p class="text-sm text-muted mb-5">
-                        Project planning, Agile methodology, risk management,
-                        stakeholder communication and project execution.
-                    </p>
-
-                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/E86L05P34CP7"
-                    target="_blank"
-                    class="text-xs font-bold text-slate-900 hover:text-blue-600">
-                        View Certificate →
-                    </a>
-                </div>
-
-            </div>
-
-
-            
-
-
-            
-
-            </div>
-
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 bg-paper border border-line" data-aos="fade-up">
+          <h4 class="eyebrow mb-4">MODULE_A — LANGUAGES &amp; AI</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag-mono">Python (Flask)</span><span class="tag-mono">Kotlin</span><span class="tag-mono">Node.js</span>
+            <span class="tag-mono">Llama 3.1 LLM</span><span class="tag-mono">Groq API</span><span class="tag-mono">C++ / Arduino</span>
+          </div>
         </div>
+        <div class="p-8 bg-paper border border-line" data-aos="fade-up" data-aos-delay="100">
+          <h4 class="eyebrow mb-4">MODULE_B — INFRASTRUCTURE &amp; TOOLS</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag-mono">MongoDB</span><span class="tag-mono">Firebase</span><span class="tag-mono">Docker</span>
+            <span class="tag-mono">Git / GitHub</span><span class="tag-mono">Postman</span><span class="tag-mono">Render/Vercel</span>
+            <span class="tag-mono">Stripe API</span><span class="tag-mono">Webhooks</span><span class="tag-mono">REST APIs</span>
+          </div>
+        </div>
+        <div class="p-8 bg-paper border border-line" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="eyebrow mb-4">MODULE_C — ARCHITECTURE SKILLS</h4>
+          <ul class="space-y-3">
+            <li class="text-sm font-semibold text-ink flex items-center"><span class="w-2 h-2 border border-copper mr-3"></span>Neural Code Auditing</li>
+            <li class="text-sm font-semibold text-ink flex items-center"><span class="w-2 h-2 border border-copper mr-3"></span>IoT Hardware Clusters</li>
+            <li class="text-sm font-semibold text-ink flex items-center"><span class="w-2 h-2 border border-copper mr-3"></span>Full-Stack API Design</li>
+          </ul>
+        </div>
+      </div>
     </div>
-</section>
-    <footer class="py-20 px-6 text-center border-t border-slate-100">
-        <h2 class="text-3xl font-bold mb-4">Let's build something robust.</h2>
-        <p class="text-muted mb-8">Available for architecture roles and high-impact AI/IoT projects.</p>
-        
-        <div class="flex flex-col items-center gap-6">
-            <a href="mailto:ashnahussain25@gmail.com" class="text-xl font-semibold text-blue-600 hover:underline">ashnahussain25@gmail.com</a>
-            
-            <div class="flex gap-4">
-                <div class="tooltip">
-                    <button onclick="copyLink()" onmouseout="outFunc()" class="btn-primary px-6 py-2 rounded-lg text-xs font-bold">
-                        <span class="tooltiptext" id="myTooltip">Copy URL</span>
-                        Copy Portfolio Link
-                    </button>
-                </div>
-                <a href="https://www.linkedin.com/in/ashna-hussain-500987369/" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-lg text-xs font-bold flex items-center gap-2">
-                    LinkedIn
-                </a>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-24 px-6 grid-bg">
+    <div class="max-w-6xl mx-auto">
+      <div class="border-l-4 border-copper pl-6 mb-16">
+        <p class="sheet-index mb-1">SHEET 03</p>
+        <h2 class="font-display text-3xl font-bold text-ink">Selected Projects</h2>
+        <p class="text-inksoft mt-2">Technical implementations and software solutions.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="card-blueprint overflow-hidden group" data-aos="fade-up" data-aos-delay="50">
+          <div class="bracket h-48 overflow-hidden bg-paper2">
+            <span class="bl"></span><span class="br"></span>
+            <img src="s.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Softy Pearl E-commerce">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <p class="sheet-index mb-2">FIG.02 — SOFTY PEARL</p>
+            <h4 class="font-display text-lg font-bold mb-1 text-ink">Softy Pearl</h4>
+            <p class="eyebrow mb-4">Full-Stack MERN &amp; Stripe Integration</p>
+            <p class="text-sm text-inksoft mb-6">A premium skincare platform featuring automated Stripe payment workflows, real-time order tracking via webhooks, and a custom secure Admin Dashboard for inventory management.</p>
+            <div class="flex gap-5 mt-auto font-mono text-xs font-bold uppercase">
+              <a href="https://github.com/ashnahussain255-jpg/softy" class="text-ink hover:text-copper transition">→ Code</a>
+              <a href="https://softy3.vercel.app" class="text-ink hover:text-copper transition">→ Live</a>
             </div>
+          </div>
         </div>
 
-        <div class="mt-12 flex justify-center gap-8 text-xs font-bold text-slate-400 uppercase tracking-widest">
-            <a href="https://github.com/ashnahussain255-jpg" class="hover:text-slate-900 transition">GitHub</a>
-            <span>•</span>
-            <span class="text-slate-300">System Ver 2026.1</span>
+        <div class="card-blueprint overflow-hidden group" data-aos="fade-up">
+          <div class="bracket h-48 overflow-hidden bg-paper2">
+            <span class="bl"></span><span class="br"></span>
+            <img src="h.PNG" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="EcoSync Pro">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <p class="sheet-index mb-2">FIG.03 — ECOSYNC PRO</p>
+            <h4 class="font-display text-lg font-bold mb-1 text-ink">EcoSync Pro</h4>
+            <p class="eyebrow mb-4">AI Neural Auditing Platform</p>
+            <p class="text-sm text-inksoft mb-6">Built a futuristic code auditor using Llama 3.1 &amp; Groq API to detect logic flaws and security risks in real-time.</p>
+            <div class="flex gap-5 mt-auto font-mono text-xs font-bold uppercase">
+              <a href="https://github.com/ashnahussain255-jpg/eco" class="text-ink hover:text-copper transition">→ Code</a>
+              <a href="https://ashnahussain255-jpg.github.io/eco/" class="text-ink hover:text-copper transition">→ Live</a>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
+        <div class="card-blueprint overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+          <div class="bracket h-48 overflow-hidden bg-paper2">
+            <span class="bl"></span><span class="br"></span>
+            <img src="9.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Energy EMS">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <p class="sheet-index mb-2">FIG.04 — ENERGY EMS</p>
+            <h4 class="font-display text-lg font-bold mb-1 text-ink">Energy EMS</h4>
+            <p class="eyebrow mb-4">IoT &amp; Node.js System</p>
+            <p class="text-sm text-inksoft mb-6">Designed an energy monitoring dashboard integrated with hardware sensors for real-time power analytics.</p>
+            <div class="flex gap-5 mt-auto font-mono text-xs font-bold uppercase">
+              <a href="https://github.com/ashnahussain255-jpg/Ems-api" class="text-ink hover:text-copper transition">→ Code</a>
+              <a href="https://drive.google.com/file/d/1QpReHYxnK9oWd_Z2KMWVWpgyNH0YTGe0/view" class="text-ink hover:text-copper transition">→ Demo</a>
+            </div>
+          </div>
+        </div>
 
-        function copyLink() {
-            navigator.clipboard.writeText(window.location.href);
-            var tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Copied!";
-        }
+        <div class="card-blueprint overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+          <div class="bracket h-48 overflow-hidden bg-paper2">
+            <span class="bl"></span><span class="br"></span>
+            <img src="yup.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Acrylix E-Shop">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <p class="sheet-index mb-2">FIG.05 — ACRYLIX E-SHOP</p>
+            <h4 class="font-display text-lg font-bold mb-1 text-ink">Acrylix E-Shop</h4>
+            <p class="eyebrow mb-4">Full-Stack Platform</p>
+            <p class="text-sm text-inksoft mb-6">A production-ready e-commerce solution focused on smooth UI transitions and secure payment flows.</p>
+            <div class="flex gap-5 mt-auto font-mono text-xs font-bold uppercase">
+              <a href="https://github.com/ashnahussain255-jpg/acrylic" class="text-ink hover:text-copper transition">→ Code</a>
+              <a href="https://ashnahussain255-jpg.github.io/acrylic/" class="text-ink hover:text-copper transition">→ Live</a>
+            </div>
+          </div>
+        </div>
 
-        function outFunc() {
-            var tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Copy URL";
-        }
-    </script>
+        <div class="card-blueprint overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+          <div class="bracket h-48 overflow-hidden bg-paper2">
+            <span class="bl"></span><span class="br"></span>
+            <img src="one.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Knitted Boutique">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <p class="sheet-index mb-2">FIG.06 — KNITTED BOUTIQUE</p>
+            <h4 class="font-display text-lg font-bold mb-1 text-ink">Knitted Boutique</h4>
+            <p class="eyebrow mb-4">UI/UX Showcase</p>
+            <p class="text-sm text-inksoft mb-6">A high-end boutique interface showcasing aesthetic product displays and fluid user experience design.</p>
+            <div class="flex gap-5 mt-auto font-mono text-xs font-bold uppercase">
+              <a href="https://github.com/ashnahussain255-jpg/knitted" class="text-ink hover:text-copper transition">→ Code</a>
+              <a href="https://ashnahussain255-jpg.github.io/knitted/" class="text-ink hover:text-copper transition">→ Live</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-blueprint overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
+          <div class="bracket h-48 overflow-hidden bg-paper2">
+            <span class="bl"></span><span class="br"></span>
+            <img src="asset-02.gif" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Citypunks landing page">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <p class="sheet-index mb-2">FIG.07 — CITYPUNKS</p>
+            <h4 class="font-display text-lg font-bold mb-1 text-ink">Citypunks</h4>
+            <p class="eyebrow mb-4">Game Landing Page — UI/UX Wireframe</p>
+            <p class="text-sm text-inksoft mb-6">A neon-themed marketing site for a sandbox city game, built with animated sector navigation, a live "dispatches" news feed, and character showcase sections.</p>
+            <div class="flex gap-5 mt-auto font-mono text-xs font-bold uppercase">
+              <a href="https://github.com/ashnahussain255-jpg/chunky" class="text-ink hover:text-copper transition">→ Code</a>
+              <a href="https://ashnahussain255-jpg.github.io/chunky/" class="text-ink hover:text-copper transition">→ Live</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-blueprint overflow-hidden group md:col-span-2" data-aos="fade-up" data-aos-delay="350">
+          <div class="md:flex">
+            <div class="bracket h-48 md:h-auto md:w-72 overflow-hidden bg-paper2 flex-shrink-0">
+              <span class="bl"></span><span class="br"></span>
+              <img src="salon.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Salon Website">
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-center">
+              <p class="sheet-index mb-2">FIG.08 — LUXURY SALON</p>
+              <h4 class="font-display text-lg font-bold mb-1 text-ink">Luxury Salon Website</h4>
+              <p class="eyebrow mb-4">Frontend Development &amp; UI/UX Design</p>
+              <p class="text-sm text-inksoft mb-6">A modern salon landing website designed with an elegant user interface, responsive layouts, smooth animations, and a premium beauty brand experience. Built using HTML, CSS, JavaScript and modern frontend practices.</p>
+              <div class="flex gap-5 font-mono text-xs font-bold uppercase">
+                <a href="https://claude.ai/public/artifacts/c3afb39a-e80a-4cbf-92e6-fb1c3bd04382" class="text-ink hover:text-copper transition">→ Code</a>
+                <a href="https://claude.ai/public/artifacts/c3afb39a-e80a-4cbf-92e6-fb1c3bd04382" class="text-ink hover:text-copper transition">→ Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-24 px-6 bg-surface border-y border-line">
+    <div class="max-w-4xl mx-auto">
+      <div class="border-l-4 border-copper pl-6 mb-16">
+        <p class="sheet-index mb-1">SHEET 04</p>
+        <h2 class="font-display text-3xl font-bold text-ink">Technical Background</h2>
+      </div>
+      <div class="pl-8 timeline-rail space-y-14">
+        <div class="relative" data-aos="fade-right">
+          <span class="timeline-tick absolute -left-[42px] top-0 px-2 py-1">2025</span>
+          <h4 class="font-display font-bold text-lg text-ink">IoT Infrastructure Architect (FYP)</h4>
+          <p class="text-inksoft text-sm mt-1">Leading development of energy monitoring hardware clusters using ESP32 and high-concurrency Node.js backends.</p>
+        </div>
+        <div class="relative" data-aos="fade-right" data-aos-delay="100">
+          <span class="timeline-tick absolute -left-[42px] top-0 px-2 py-1">2024</span>
+          <h4 class="font-display font-bold text-lg text-ink">Freelance Developer</h4>
+          <p class="text-inksoft text-sm mt-1">Deployed scalable full-stack applications for diverse clients using Python and JavaScript ecosystems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="py-24 px-6 grid-bg">
+    <div class="max-w-6xl mx-auto">
+      <div class="border-l-4 border-copper pl-6 mb-16">
+        <p class="sheet-index mb-1">SHEET 05</p>
+        <h2 class="font-display text-3xl font-bold text-ink">Certifications</h2>
+        <p class="text-inksoft mt-2">Professional learning and technical achievements.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-blueprint overflow-hidden group" data-aos="fade-up">
+          <div class="bracket h-48 overflow-hidden bg-paper2">
+            <span class="bl"></span><span class="br"></span>
+            <img src="ss.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Google Project Management Certificate">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h4 class="font-display text-lg font-bold mb-2 text-ink">Google Project Management Certificate</h4>
+            <p class="eyebrow mb-4">Google | Coursera</p>
+            <p class="text-sm text-inksoft mb-5">Project planning, Agile methodology, risk management, stakeholder communication and project execution.</p>
+            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/E86L05P34CP7" target="_blank"
+               class="font-mono text-xs font-bold uppercase text-ink hover:text-copper transition mt-auto">→ View Certificate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-20 px-6 text-center bg-ink text-paper">
+    <p class="sheet-index text-copperl mb-3">SHEET 06 — CONTACT</p>
+    <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Let's build something robust.</h2>
+    <p class="text-paper/70 mb-8">Available for architecture roles and high-impact AI/IoT projects.</p>
+
+    <div class="flex flex-col items-center gap-6">
+      <a href="mailto:ashnahussain25@gmail.com" class="font-display text-xl md:text-2xl font-semibold text-copperl hover:text-copper transition">ashnahussain25@gmail.com</a>
+
+      <div class="flex gap-4">
+        <button onclick="copyLink()" onmouseout="outFunc()" class="tooltip btn-copper px-6 py-2 text-xs font-mono font-bold uppercase relative">
+          <span class="tooltiptext absolute -top-9 left-1/2 -translate-x-1/2 bg-white text-ink text-[10px] font-bold px-2 py-1 opacity-0 pointer-events-none transition" id="myTooltip">Copy URL</span>
+          Copy Portfolio Link
+        </button>
+        <a href="https://www.linkedin.com/in/ashna-hussain-500987369/" target="_blank" class="border border-paper/40 text-paper px-6 py-2 text-xs font-mono font-bold uppercase hover:border-copper hover:text-copperl transition flex items-center gap-2">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-14 flex justify-center gap-6 text-[11px] font-mono font-semibold text-paper/50 uppercase tracking-widest">
+      <a href="https://github.com/ashnahussain255-jpg" class="hover:text-paper transition">GitHub</a>
+      <span>/</span>
+      <span>REV. 2026.2</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true, offset: 60 });
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href);
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copied!";
+      tooltip.style.opacity = 1;
+    }
+    function outFunc() {
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.style.opacity = 0;
+      setTimeout(() => tooltip.innerHTML = "Copy URL", 200);
+    }
+  </script>
 </body>
 </html>
