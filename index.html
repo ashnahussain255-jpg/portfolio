@@ -45,6 +45,46 @@
       linear-gradient(90deg, rgba(16,26,43,0.055) 1px, transparent 1px);
     background-size: 36px 36px;
   }
+  .wire-card{
+    position:relative;
+    overflow:hidden;
+    border:1px solid #C7D1DE;
+    background:#fff;
+    transition:.4s;
+    cursor:pointer;
+}
+
+.wire-card img{
+    width:100%;
+    display:block;
+    transition:.5s;
+}
+
+.wire-card:hover img{
+    transform:scale(1.08);
+}
+
+.wire-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(16,26,43,.75);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:.4s;
+}
+
+.wire-card:hover .overlay{
+    opacity:1;
+}
   .paper-nav {
     background: rgba(238,241,246,0.86);
     backdrop-filter: blur(10px);
@@ -454,7 +494,53 @@
       </div>
     </div>
   </section>
+<!-- WIREFRAMES -->
+<section id="wireframes" class="py-24 px-6 bg-surface border-y border-line">
+  <div class="max-w-6xl mx-auto">
 
+    <div class="border-l-4 border-copper pl-6 mb-16">
+      <p class="sheet-index mb-1">SHEET 04</p>
+      <h2 class="font-display text-3xl font-bold text-ink">
+        UI/UX Wireframes
+      </h2>
+      <p class="text-inksoft mt-2">
+        Low-fidelity and high-fidelity wireframes designed in Figma.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Wireframe 1 -->
+      <div class="wire-card" data-aos="fade-up">
+        <img src="wireframe1.png" alt="Home Wireframe">
+        <div class="overlay">
+          <h3>Home Screen</h3>
+          <p>Low Fidelity</p>
+        </div>
+      </div>
+
+      <!-- Wireframe 2 -->
+      <div class="wire-card" data-aos="zoom-in" data-aos-delay="150">
+        <img src="wireframe2.png" alt="Booking Wireframe">
+        <div class="overlay">
+          <h3>Booking Flow</h3>
+          <p>Mid Fidelity</p>
+        </div>
+      </div>
+
+      <!-- Wireframe 3 -->
+      <div class="wire-card" data-aos="fade-left" data-aos-delay="300">
+        <img src="wireframe3.png" alt="Profile Wireframe">
+        <div class="overlay">
+          <h3>Profile Screen</h3>
+          <p>High Fidelity</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
   <!-- FOOTER -->
   <footer class="py-20 px-6 text-center bg-ink text-paper">
     <p class="sheet-index text-copperl mb-3">SHEET 06 — CONTACT</p>
