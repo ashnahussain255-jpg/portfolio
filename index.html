@@ -45,18 +45,21 @@
       linear-gradient(90deg, rgba(16,26,43,0.055) 1px, transparent 1px);
     background-size: 36px 36px;
   }
-  .wire-card{
+.wire-card{
     position:relative;
     overflow:hidden;
+    border-radius:18px;
     border:1px solid #C7D1DE;
     background:#fff;
-    transition:.4s;
     cursor:pointer;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .wire-card img{
     width:100%;
-    display:block;
+    height:320px;
+    object-fit:cover;
     transition:.5s;
 }
 
@@ -65,8 +68,23 @@
 }
 
 .wire-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,.18);
+}
+
+.wire-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(16,26,43,.9),transparent);
+    display:flex;
+    align-items:flex-end;
+    padding:20px;
+}
+
+.wire-overlay h3{
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
 }
 
 .overlay{
@@ -494,52 +512,87 @@
       </div>
     </div>
   </section>
-<!-- WIREFRAMES -->
+<!-- WIREFRAMES SECTION -->
 <section id="wireframes" class="py-24 px-6 bg-surface border-y border-line">
-  <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
 
-    <div class="border-l-4 border-copper pl-6 mb-16">
-      <p class="sheet-index mb-1">SHEET 04</p>
-      <h2 class="font-display text-3xl font-bold text-ink">
-        UI/UX Wireframes
-      </h2>
-      <p class="text-inksoft mt-2">
-        Low-fidelity and high-fidelity wireframes designed in Figma.
-      </p>
+        <div class="border-l-4 border-copper pl-6 mb-14">
+            <p class="sheet-index">SHEET 04</p>
+            <h2 class="font-display text-4xl font-bold">UI/UX Wireframes</h2>
+            <p class="text-inksoft mt-2">
+                Low & High Fidelity Wireframes Designed in Figma
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-8">
+
+            <!-- Card 1 -->
+            <div class="wire-card" data-aos="fade-up">
+                <img src="wireframe1.png" alt="">
+                <div class="wire-overlay">
+                    <h3>Home Screen</h3>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="wire-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="wireframe2.png" alt="">
+                <div class="wire-overlay">
+                    <h3>Services</h3>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="wire-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="wireframe3.png" alt="">
+                <div class="wire-overlay">
+                    <h3>Booking</h3>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="wire-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="wireframe4.png" alt="">
+                <div class="wire-overlay">
+                    <h3>Profile</h3>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="wire-card" data-aos="fade-up">
+                <img src="wireframe5.png" alt="">
+                <div class="wire-overlay">
+                    <h3>Gallery</h3>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="wire-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="wireframe6.png" alt="">
+                <div class="wire-overlay">
+                    <h3>Payment</h3>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="wire-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="wireframe7.png" alt="">
+                <div class="wire-overlay">
+                    <h3>Settings</h3>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="wire-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="wireframe8.png" alt="">
+                <div class="wire-overlay">
+                    <h3>Confirmation</h3>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- Wireframe 1 -->
-      <div class="wire-card" data-aos="fade-up">
-        <img src="wireframe1.png" alt="Home Wireframe">
-        <div class="overlay">
-          <h3>Home Screen</h3>
-          <p>Low Fidelity</p>
-        </div>
-      </div>
-
-      <!-- Wireframe 2 -->
-      <div class="wire-card" data-aos="zoom-in" data-aos-delay="150">
-        <img src="wireframe2.png" alt="Booking Wireframe">
-        <div class="overlay">
-          <h3>Booking Flow</h3>
-          <p>Mid Fidelity</p>
-        </div>
-      </div>
-
-      <!-- Wireframe 3 -->
-      <div class="wire-card" data-aos="fade-left" data-aos-delay="300">
-        <img src="wireframe3.png" alt="Profile Wireframe">
-        <div class="overlay">
-          <h3>Profile Screen</h3>
-          <p>High Fidelity</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
 </section>
   <!-- FOOTER -->
   <footer class="py-20 px-6 text-center bg-ink text-paper">
